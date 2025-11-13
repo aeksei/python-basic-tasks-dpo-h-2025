@@ -22,3 +22,14 @@ products = [
     "сыр",
     "яблоко",
 ]
+
+counter = {}  # Ключ - название товара, значение количество
+for product in products:
+    if product not in counter:
+        # Встретил продукт в первый раз
+        counter[product] = 1
+    else:
+        # уже встречал продукт
+        counter[product] += 1
+
+print(counter)
