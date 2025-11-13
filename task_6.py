@@ -10,3 +10,12 @@
 """
 
 expenses = [150, 300, 50, 400, 250, 100, 500]
+
+# max_expense = 0  # Гипотеза максимальной траты
+# max_expense = expenses[0]  # expenses[-1]
+max_expense = float("-inf")
+for current_expense in expenses:
+    if current_expense > max_expense:
+        max_expense = current_expense  # Нашёл большую трату, перезаписал её
+
+print(max_expense)
