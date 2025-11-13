@@ -9,3 +9,8 @@
 
 expenses = [150, 300, 50, 400, 250, 100, 500]  # расходы на продукты в течение недели
 
+total_expense = 0
+for expense in expenses:
+    total_expense += expense  # total_expense = total_expense + expense
+
+assert total_expense == sum(expenses), "Итоговая сумма не совпадает с ожидаемой"
