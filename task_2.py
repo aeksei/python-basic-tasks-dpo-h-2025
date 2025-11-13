@@ -11,11 +11,10 @@
 
 year = 2024
 
-condition_1_1 = year % 4 == 0
-condition_1_2 = year % 100 != 0
-condition_2 = year % 400 == 0
-
-if condition_1_1 and condition_1_2 or condition_2:
+if (
+        year % 4 == 0 and year % 100 != 0
+        or year % 400 == 0
+):
     print(f"Год {year} является високосным")
 else:
     print(f"Год {year} не является високосным")
