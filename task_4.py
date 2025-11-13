@@ -7,3 +7,7 @@
 - OCT (восьмеричная) 10 -> 0o12
 - HEX (шестнадцатеричная) 10 -> 0xA
 """
+
+for num in range(16):
+    # print(num, bin(num), oct(num), hex(num))
+    print(f"{num:<2} | 0b{num:04b} | 0o{num:02o} | 0x{num:02X}")
