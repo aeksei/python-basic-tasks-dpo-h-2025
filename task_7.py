@@ -11,3 +11,11 @@
 """
 
 expenses = [150, 300, 50, 400, 250, 100, 500]  # расходы на продукты в течение недели
+threshhold = 200
+
+days = 0
+for expense in expenses:
+    if expense > threshhold:
+        days += 1
+
+print(days)
