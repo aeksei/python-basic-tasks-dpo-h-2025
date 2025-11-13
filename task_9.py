@@ -10,7 +10,6 @@
 2. Находит продукт, на который было потрачено наибольшее количество денег.
 3. Выводит название этого продукта и общую сумму, потраченную на него.
 """
-
 purchases = [
     ("яблоко", 50),
     ("банан", 30),
@@ -23,3 +22,16 @@ purchases = [
     ("сыр", 100),
     ("яблоко", 50),
 ]
+
+total_expenses = {}
+for product, expense in purchases:
+    if product not in total_expenses:
+        total_expenses[product] = expense
+    else:
+        total_expenses[product] += expense
+
+print(total_expenses)
+
+for product in total_expenses:
+    expense = total_expenses["product"]
+    ...
