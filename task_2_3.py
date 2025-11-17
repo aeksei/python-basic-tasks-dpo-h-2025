@@ -9,4 +9,20 @@
 Распечатать список категорий трат по дням недели.
 """
 
-expenses = [50, 200, 400, 150, 80, 350, 100]
+
+def get_expense_categories(expenses: list[float]) -> list[str]:
+    categories = []
+    for expense in expenses:
+        if expense < 100:
+            categories.append("низкий уровень")
+        elif 100 <= expense < 300:
+            categories.append("средний уровень")
+        else:
+            categories.append("высокий уровень")
+
+    return categories
+
+
+if __name__ == "__main__":
+    expenses = [50, 200, 400, 150, 80, 350, 100]
+    print(get_expense_categories(expenses))
