@@ -18,3 +18,15 @@ products = [
     {"name": "хлеб", "price": 50, "discount": 0},
     {"name": "сыр", "price": 300, "discount": 15},
 ]
+
+
+def get_product_price_with_discount(products: list[dict]) -> list[float]:
+    prices = []
+    for product in products:
+        price_with_discount = product["price"] * (1 - product["discount"] * 0.01)
+        prices.append(price_with_discount)
+
+    return prices
+
+
+print(get_product_price_with_discount(products))
