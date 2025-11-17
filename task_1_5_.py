@@ -6,7 +6,7 @@
 Напишите программу, которая подсчитывает сумму расходов за неделю.
 Проверьте с помощью `assert` результат
 """
-from task_5 import total_expense
+from task_1_5 import total_expense
 
 expenses = [
     [150, 300, 50, 400, 250, 100, 500],
