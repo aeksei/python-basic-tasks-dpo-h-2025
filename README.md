@@ -11,3 +11,8 @@ python3 -m venv venv
 ```commandline
  pip install -r requirements.txt
 ```
+
+## Настройка pre-commit
+```commandline
+pip install pre-commit
+```
