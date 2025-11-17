@@ -13,19 +13,6 @@
 
 from collections import Counter
 
-products = [
-    "яблоко",
-    "банан",
-    "яблоко",
-    "молоко",
-    "хлеб",
-    "банан",
-    "яблоко",
-    "молоко",
-    "сыр",
-    "яблоко",
-]
-
 
 def get_product_counter(products):
     # counter = defaultdict(int)  # defaultdict(0)
@@ -34,3 +21,20 @@ def get_product_counter(products):
 
     counter = Counter(products)
     return counter
+
+
+if __name__ == "__main__":
+    products = [
+        "яблоко",
+        "банан",
+        "яблоко",
+        "молоко",
+        "хлеб",
+        "банан",
+        "яблоко",
+        "молоко",
+        "сыр",
+        "яблоко",
+    ]
+
+    print(get_product_counter(products))
