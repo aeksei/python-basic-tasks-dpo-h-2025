@@ -10,6 +10,8 @@
 2. Использует словарь для подсчета частоты покупок каждого продукта.
 3. Выводит частоту покупок для каждого продукта.
 """
+from collections import defaultdict, Counter
+
 products = [
     "яблоко",
     "банан",
@@ -23,13 +25,11 @@ products = [
     "яблоко",
 ]
 
-counter = {}  # Ключ - название товара, значение количество
-for product in products:
-    if product not in counter:
-        # Встретил продукт в первый раз
-        counter[product] = 1
-    else:
-        # уже встречал продукт
-        counter[product] += 1
+# counter = defaultdict(int)  # defaultdict(0)
+# for product in products:
+#     counter[product] += 1
+
+counter = Counter(products)
 
 print(counter)
+assert counter == {'яблоко': 4, 'банан': 2, 'молоко': 2, 'хлеб': 1, 'сыр': 1}
