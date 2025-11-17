@@ -34,6 +34,3 @@ def get_product_counter(products):
 
     counter = Counter(products)
     return counter
-
-
-# print(counter)
