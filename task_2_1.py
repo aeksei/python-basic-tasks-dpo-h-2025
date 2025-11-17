@@ -26,6 +26,10 @@ def get_product_price_with_discount(products: list[dict]) -> list[float]:
         price_with_discount = product["price"] * (1 - product["discount"] * 0.01)
         prices.append(price_with_discount)
 
+    prices = [
+        product["price"] * (1 - product["discount"] * 0.01) for product in products
+    ]
+
     return prices
 
 

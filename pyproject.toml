@@ -7,7 +7,7 @@ target-version = "py311"
 [tool.ruff.lint]
 # Select specific rule sets to enable.
 # "E" for pycodestyle errors, "F" for Pyflakes, "I" for isort-like import sorting.
-select = ["E", "F", "I"]
+select = ["E", "F", "I", "PERF"]
 # Ignore specific rules, e.g., E501 for line-too-long if you prefer a different handling.
 ignore = ["E501"]
 # Exclude certain directories from linting.
