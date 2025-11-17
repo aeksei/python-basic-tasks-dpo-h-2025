@@ -11,7 +11,7 @@
 3. Выводит частоту покупок для каждого продукта.
 """
 
-from collections import defaultdict, Counter
+from collections import Counter
 
 products = [
     "яблоко",
