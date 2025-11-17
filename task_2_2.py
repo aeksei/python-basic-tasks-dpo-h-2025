@@ -17,5 +17,5 @@ products = [
     {"name": "банан", "price": 200, "discount": 5},
     {"name": "молоко", "price": 150, "discount": 20},
     {"name": "хлеб", "price": 50, "discount": 0},
-    {"name": "сыр", "price": 300, "discount": 15}
+    {"name": "сыр", "price": 300, "discount": 15},
 ]

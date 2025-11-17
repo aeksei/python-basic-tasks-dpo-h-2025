@@ -10,6 +10,7 @@
 2. Использует словарь для подсчета частоты покупок каждого продукта.
 3. Выводит частоту покупок для каждого продукта.
 """
+
 from collections import defaultdict, Counter
 
 products = [
@@ -33,5 +34,6 @@ def get_product_counter(products):
 
     counter = Counter(products)
     return counter
+
 
 # print(counter)
