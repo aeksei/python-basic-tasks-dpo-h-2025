@@ -17,18 +17,18 @@ def get_expense_category(expense: float) -> str:
     :param expense:
     :return:
     """
-    if isinstance(expense, (int, float)):
-        if expense >= 0:
-            if expense < 100:
-                return "низкий уровень"
-            elif 100 <= expense < 300:
-                return "средний уровень"
-            else:
-                return "высокий уровень"
-        else:
-            raise ValueError("Трата не должна быть отрицательной")
-    else:
+    if not isinstance(expense, (int, float)):
         raise TypeError("Трата должна быть целым числом")
+
+    if expense < 0:
+        raise ValueError("Трата не должна быть отрицательной")
+
+    if expense < 100:
+        return "низкий уровень"
+    elif 100 <= expense < 300:
+        return "средний уровень"
+    else:
+        return "высокий уровень"
 
 
 def get_expense_categories(expenses: list[float]) -> list[str]:
