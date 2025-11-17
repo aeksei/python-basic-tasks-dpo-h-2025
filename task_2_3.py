@@ -13,12 +13,18 @@
 def get_expense_categories(expenses: list[float]) -> list[str]:
     categories = []
     for expense in expenses:
-        if expense < 100:
-            categories.append("низкий уровень")
-        elif 100 <= expense < 300:
-            categories.append("средний уровень")
+        if isinstance(expense, (int, float)):
+            if expense >= 0:
+                if expense < 100:
+                    categories.append("низкий уровень")
+                elif 100 <= expense < 300:
+                    categories.append("средний уровень")
+                else:
+                    categories.append("высокий уровень")
+            else:
+                raise ValueError("Трата не должна быть отрицательной")
         else:
-            categories.append("высокий уровень")
+            raise TypeError("Трата должна быть целым числом")
 
     return categories
 
