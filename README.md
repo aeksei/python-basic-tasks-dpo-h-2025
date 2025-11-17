@@ -13,6 +13,12 @@ python3 -m venv venv
 ```
 
 ## Настройка pre-commit
+Активировать pre-commit
 ```commandline
-pip install pre-commit
+pre-commit install
+```
+
+Деактивировать pre-commit
+```commandline
+pre-commit uninstall
 ```
