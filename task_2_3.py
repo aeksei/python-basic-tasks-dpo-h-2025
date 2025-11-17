@@ -10,23 +10,34 @@
 """
 
 
-def get_expense_categories(expenses: list[float]) -> list[str]:
-    categories = []
-    for expense in expenses:
-        if isinstance(expense, (int, float)):
-            if expense >= 0:
-                if expense < 100:
-                    categories.append("низкий уровень")
-                elif 100 <= expense < 300:
-                    categories.append("средний уровень")
-                else:
-                    categories.append("высокий уровень")
+def get_expense_category(expense: float) -> str:
+    """
+    1. Валидация
+    2. Категорирование
+    :param expense:
+    :return:
+    """
+    if isinstance(expense, (int, float)):
+        if expense >= 0:
+            if expense < 100:
+                return "низкий уровень"
+            elif 100 <= expense < 300:
+                return "средний уровень"
             else:
-                raise ValueError("Трата не должна быть отрицательной")
+                return "высокий уровень"
         else:
-            raise TypeError("Трата должна быть целым числом")
+            raise ValueError("Трата не должна быть отрицательной")
+    else:
+        raise TypeError("Трата должна быть целым числом")
 
-    return categories
+
+def get_expense_categories(expenses: list[float]) -> list[str]:
+    """Формирование итогового результата.
+
+    :param expenses: Набор трат
+    :return: Категории трат
+    """
+    return [get_expense_category(expense) for expense in expenses]
 
 
 if __name__ == "__main__":
