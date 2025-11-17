@@ -25,11 +25,13 @@ products = [
     "яблоко",
 ]
 
-# counter = defaultdict(int)  # defaultdict(0)
-# for product in products:
-#     counter[product] += 1
 
-counter = Counter(products)
+def get_product_counter(products):
+    # counter = defaultdict(int)  # defaultdict(0)
+    # for product in products:
+    #     counter[product] += 1
 
-print(counter)
-assert counter == {'яблоко': 4, 'банан': 2, 'молоко': 2, 'хлеб': 1, 'сыр': 1}
+    counter = Counter(products)
+    return counter
+
+# print(counter)
