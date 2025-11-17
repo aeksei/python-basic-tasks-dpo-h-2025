@@ -9,3 +9,5 @@
 """
 
 products = "яблоко,  БАНАН,молоко ,  Хлеб,   сыр"
+
+print(", ".join(product.strip().capitalize() for product in products.split(",")))
