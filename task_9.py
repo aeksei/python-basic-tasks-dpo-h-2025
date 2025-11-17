@@ -32,6 +32,8 @@ for product, expense in purchases:
 
 print(total_expenses)
 
-for product in total_expenses:
-    expense = total_expenses["product"]
+for product, expense in total_expenses.items():
+    # expense = total_expenses["product"]
     ...
+
+print(sum(total_expenses.values()))
