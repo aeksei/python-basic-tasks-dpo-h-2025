@@ -1,5 +1,8 @@
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
+
+INPUT_DATE_FORMAT = "%Y-%m-%d"
+OUTPUT_DATE_FORMAT = "%y/%m/%d"
 
 
 def is_valid_date(date_str, format_) -> bool:
@@ -11,15 +14,23 @@ def is_valid_date(date_str, format_) -> bool:
     return True
 
 
-regex = r"\d\d\d\d-\d\d\-\d\d"
+if __name__ == "__main__":
+    regex = r"\d\d\d\d-\d\d\-\d\d"
 
-test_str = "Сегодня: 2025-11-20\nНовый год: 2025-12-31\nЗлая шутка: 2025-02-30\n"
-
-for text_date in re.findall(regex, test_str, re.M):
-    if is_valid_date(text_date, "%Y-%m-%d"):
-        print(text_date, "Корректная дата")
-    else:
-        print(text_date, "Некорректная дата")
+    with open("src_file.txt") as f:
+        for test_str in f:
+            for text_date in re.findall(regex, test_str):
+                if is_valid_date(text_date, INPUT_DATE_FORMAT):
+                    next_day = datetime.strptime(
+                        text_date, INPUT_DATE_FORMAT
+                    ) + timedelta(days=1)
+                    print(
+                        text_date,
+                        "Корректная дата. Следующий день -",
+                        next_day.strftime(OUTPUT_DATE_FORMAT),
+                    )
+                else:
+                    print(text_date, "Некорректная дата")
 
 
 # matches = re.finditer(regex, test_str, re.MULTILINE)
