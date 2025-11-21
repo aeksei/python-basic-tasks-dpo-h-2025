@@ -9,4 +9,37 @@
 Распечатать список категорий трат по дням недели.
 """
 
-expenses = [50, 200, 400, 150, 80, 350, 100]
+
+def get_expense_category(expense: float) -> str:
+    """
+    1. Валидация
+    2. Категорирование
+    :param expense:
+    :return:
+    """
+    if not isinstance(expense, (int, float)):
+        raise TypeError("Трата должна быть целым числом")
+
+    if expense < 0:
+        raise ValueError("Трата не должна быть отрицательной")
+
+    if expense < 100:
+        return "низкий уровень"
+    elif 100 <= expense < 300:
+        return "средний уровень"
+    else:
+        return "высокий уровень"
+
+
+def get_expense_categories(expenses: list[float]) -> list[str]:
+    """Формирование итогового результата.
+
+    :param expenses: Набор трат
+    :return: Категории трат
+    """
+    return [get_expense_category(expense) for expense in expenses]
+
+
+if __name__ == "__main__":
+    expenses = [50, 200, 400, 150, 80, 350, 100]
+    print(get_expense_categories(expenses))

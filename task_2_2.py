@@ -12,10 +12,27 @@
 Функция должна найти и вернуть только те продукты, у которых размер скидки не меньше заданного значения.
 """
 
-products = [
-    {"name": "яблоко", "price": 100, "discount": 10},
-    {"name": "банан", "price": 200, "discount": 5},
-    {"name": "молоко", "price": 150, "discount": 20},
-    {"name": "хлеб", "price": 50, "discount": 0},
-    {"name": "сыр", "price": 300, "discount": 15}
-]
+
+def filter_products(products: list[dict], threashold: int) -> list[str]:
+    """"""
+    products_list = [
+        product["name"] for product in products if product["discount"] >= threashold
+    ]
+    # for product in products:
+    #     if product["discount"] >= threashold:
+    #         products_list.append(product["name"])
+
+    return products_list
+
+
+if __name__ == "__main__":
+    products = [
+        {"name": "яблоко", "price": 100, "discount": 10},
+        {"name": "банан", "price": 200, "discount": 5},
+        {"name": "молоко", "price": 150, "discount": 20},
+        {"name": "хлеб", "price": 50, "discount": 0},
+        {"name": "сыр", "price": 300, "discount": 15},
+    ]
+
+    threashold = 10
+    print(filter_products(products, threashold))

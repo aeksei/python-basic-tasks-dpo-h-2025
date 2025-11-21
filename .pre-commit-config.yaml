@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Specify the desired Ruff version (e.g., v0.14.5)
+    rev: v0.14.5
+    hooks:
+      # Run the linter
+      - id: ruff-check
+        # Optional: Add --fix argument to automatically fix linting issues
+        args: [ --fix ]
+      # Run the formatter
+      - id: ruff-format
